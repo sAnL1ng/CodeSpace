@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: red;
+            float: left;
+        }
+        .content{
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+
+        .clear{
+            clear:both;
+        }
+
+        ul::after{
+            content:"";
+            clear:both;
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+</body>
+</html>

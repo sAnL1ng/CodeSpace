@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: #4c4c4c url(https://unsplash.it/1500/900?image=1021); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    display: flex;
+    width: 850px;
+}
+
+.speed{
+    flex:1;/*子容器完全继承父容器可用的区域*/
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.speed-bar{
+    width: 100%;
+    height: 16.3%;
+    background:linear-gradient(-170deg,#2376ae,#c16ecf 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    
+}

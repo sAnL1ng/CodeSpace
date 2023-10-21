@@ -1,0 +1,25 @@
+div{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+li{
+    list-style: none;  
+    position: relative;
+    text-align: left;
+  } 
+input#list-input
+{
+    padding: 10px;
+    width: 350px;
+    height: 60px;
+    font-size: 20px;
+    border: 0;
+    border-bottom: 1px solid #a5a7b1;
+    outline: 0;
+}   
+#list{
+    position: absolute;
+    margin-left: 20%;
+}

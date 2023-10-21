@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;  /*将容器声明成IE模型*/
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    font: 100% / 1.25 Helvetica,arial,sans-serif;
+    perspective: 1000px;
+    background-color: #444;
+    background-image: linear-gradient(to bottom,#444,#999);
+}
+
+.p3d{
+    transform-style: preserve-3d;
+}
+
+.book{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    margin-top: -150px;
+    color: #fff;
+    -webkit-transform: rotateX(60deg);
+    -moz-transform: rotateX(60deg);
+    -o-transform: rotateX(60deg);
+    user-select: none;
+}
+
+.front-cover{
+    cursor: move;
+    transform-origin: 0 50%;
+    transform: rotateY(0deg);
+
+}
+
+.page{
+    width: 300px;
+    height: 300px;
+    padding: 1em;/*相对父容器大小*/
+    position: absolute;/*脱离文档流*/
+    left: 0;
+    top: 0;
+    text-indent: 2em;
+}
+
+
+.inside{
+    background-color: #2a0303;
+}
+
+.outside{
+    background-color: #fff;
+}
+
+.front-cover .outside{
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.nga.178.com%2Fattachments%2Fmon_202006%2F02%2FjoQ5-38t6XlZ5pT3cS2yo-1o0.png&refer=http%3A%2F%2Fimg.nga.178.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1700461884&t=fb89517f74280d519c31d1b97adb1af3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(3px);
+  }
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.back-cover .outside{
+    transform: translateZ(-3px);
+}
+
+.back-cover .inside{
+    background-color: #1e0000;
+}
+
+.card,
+.shadow{
+    width: 196px;
+    height: 132px;
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    transform-origin: 0 100%;
+}
+
+.shadow{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card{
+    background-image: url(https://images.9k9k.com/m/gamelib/202011/90947_zkyz.jpg);
+    background-size: cover;
+    transform-origin: 0 100%;
+}

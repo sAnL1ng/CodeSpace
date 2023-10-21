@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3975985_v6iygr8kjlj.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="music">
+    <header>
+      <span>
+        <i class="iconfont icon-zuojiantou"></i>
+      </span>
+      <span>Explore</span>
+    </header>
+
+    <section class="desc">
+      <div class="pic">
+        <img class="avatar" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202106%2F09%2F20210609081952_51ef5.thumb.1000_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1682306903&t=8dbef65e908367c53af14a580d2af7d7" alt="">
+      </div>
+      <div class="desc-content">
+        <p>Crooked Doors</p>
+        <p>Royal Thunder</p>
+      </div>
+    </section>
+
+    <section class="list">
+      <div class="nav">
+        <span>Playlist</span>
+        <span>
+          <i class="iconfont icon-menu"></i>
+        </span>
+      </div>
+      <div class="list-content">
+        <ul id="ul">
+          <!-- <li>
+            <span class="index">1</span>
+            <div class="song">
+              <p>Time Machine</p>
+              <p>Royal Thunder</p>
+            </div>
+            <span class="more">
+              <i class="iconfont icon-more"></i>
+            </span>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <footer class="play">
+      播放
+      <audio id="audio" controls src="http://music.163.com/song/media/outer/url?id=167876.mp3"></audio>
+    </footer>
+  </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+<script>
+  fetch('http://localhost:3000')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    // let ul = document.getElementById('ul')
+    for (let i = 0; i < data.length; i++) {
+      let li = `<li data-url='${data[i].url}'>
+            <span class="index">${i + 1}</span>
+            <div class="song">
+              <p>${data[i].name}</p>
+              <p>${data[i].singer}</p>
+            </div>
+            <span class="more">
+              <i class="iconfont icon-more"></i>
+            </span>
+          </li>`
+      $('#ul').append(li)
+    }
+
+    let lis = $('#ul li')
+    let audio = $('#audio')[0]
+    Array.from(lis).forEach(element => {
+      // console.log(element);
+      element.addEventListener('click', function(){
+        // console.log(this.getAttribute('data-url'));
+        let currentUrl = this.getAttribute('data-url')
+        console.log(audio);
+        audio.src = currentUrl
+        audio.play()
+      })
+    });
+  })
+
+  
+  // $('#ul li').click(function(e) {
+  //   console.log(e);
+  // })
+</script>
+</html>
