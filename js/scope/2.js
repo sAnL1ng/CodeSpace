@@ -1,8 +1,5 @@
-var a = 1 
-
-function foo() {
-    var a = 2 ;
-    console.log(a);
-}
-
-foo()
+function foo(str,a){
+     eval(str)//var b = 3 欺骗词法作用域
+     console.log(a,b);
+    }
+    foo('var b = 3',1)

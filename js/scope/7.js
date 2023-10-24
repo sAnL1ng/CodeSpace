@@ -12,6 +12,11 @@
 
 function foo(obj){
     with(obj){
-        
+      c = 1
     }
-}
+  }
+  let obj = {
+    a : 1
+  }
+  foo(obj)
+  console.log(c); 

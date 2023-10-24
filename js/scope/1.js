@@ -1,7 +1,5 @@
-var a =  1;
-
-function foo(){
-    console.log(a);
-}
-
-foo();
+if(true){
+    let a = 1;
+ }
+ console.log(a);
+ 
