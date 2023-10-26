@@ -10,8 +10,10 @@
 
 
 // function phoneNumber(numbers) {
-    // return `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`
-    //return 电话号码字符串 字符串拼接 numbers[i]
+//     return `(${numbers.slice(0, 3).join('')})
+//      ${numbers.slice(3, 6).join('')}-
+//      ${numbers.slice(6).join('')}`
+    // return 电话号码字符串 字符串拼接 numbers[i]
     // return "(" + numbers[0] + numbers[1] + numbers[2]
     //  + ")" + " " + numbers[3] + numbers[4] + numbers[5] 
     //  + "-" + numbers[6] + numbers[7] + numbers[8] + numbers[9] + ""
@@ -20,7 +22,7 @@
 // 对象 函数也是对象
 // 变量的类型由值决定
 
-let phoneNumber; // 弱类型 undefined(未定义)  null 值为空
+// let phoneNumber; // 弱类型 undefined(未定义)  null 值为空
 // 函数表达式
 // 简版的函数 箭头函数
 phoneNumber = (numbers) =>"(" + numbers[0] + numbers[1] + numbers[2]
