@@ -1,0 +1,18 @@
+.weui-panel{
+    background-color: var(--weui);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+ /* 第一个 没必要mt */
+ /* 其余的会和前面的panel mt */
+.weuipanel:first-child{
+    margin-top: 0px;
+}
+.weui-panel__hd{
+    background-position: 16px 16px 13px;
+    color: var(--weui-F6-0);
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+}

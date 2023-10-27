@@ -1,5 +1,5 @@
 import openai
-openai.api_key = "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" #openai 的sdk
+openai.api_key = "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" #openai 的sdk
 COMPLETION_MODEL = "text-advinci-003" #模型常量 达芬奇 完成 
 # 字符串模板
 # 换行
@@ -20,7 +20,7 @@ selling points and price_range
 # 定义函数
 def get_response(prompt):
     completions = openai.Completion.create(
-        # 大模型很之气那
+        # 大模型很值钱
         engine=COMPLETION_MODEL, # 模型
         prompt = prompt, # 提示词
         max_tokens=512, #省点
@@ -29,7 +29,7 @@ def get_response(prompt):
         temperature = 0.0  # 自由发挥度 0-2
     )
     # print(completions)
-    message = completions.choices[0].text #
+    message = completions.choices[0].text 
     return message
 
 
