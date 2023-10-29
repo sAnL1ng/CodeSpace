@@ -10,9 +10,9 @@ function fn(a){
     var d = a 
     console.log(d);
 }
-AO: {
-    a: undefined  
-    b: undefined
-    d: undefined
-}
+// AO: {
+//     a: undefined  
+//     b: undefined
+//     d: undefined
+// }
 fn(1)
