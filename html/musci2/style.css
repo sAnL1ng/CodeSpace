@@ -18,8 +18,9 @@
 
 .music__head--title{
     margin: 45px 0;
-    color: white;
+    color: rgb(1, 0, 0);
     padding: 0 40px;
+    
 }
 
 .back{
@@ -71,4 +72,62 @@
 .body-desc .name{
     font-size: 21px;
     margin-bottom: 2px;
+}
+.line-right{
+    position: absolute;
+    width: 277px;
+    height: 0;
+    border: 2px solid #C6C6C6;
+    margin-top: 44px;
+    margin-left: 50px;
+}
+.line-left{
+    position: absolute;
+    height: 0;
+    margin-left: 50px;
+    margin-top: 43px;
+    width: 118px;
+    border: 3px solid red;
+    z-index: 1;
+}
+.op-left{
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: SourceHanSansCN;
+    color: #9EA0AD;
+    line-height: 26px;
+    margin-top: 45px;
+    margin-left: 50px;
+}
+.ed-right{
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    font-size: 8px;
+    font-family: SourceHanSansCN;
+    font-weight: bold;
+    color: #9EA0AD;
+    line-height: 26px;  
+    margin-top: 45px;
+    margin-left: 315px;
+}
+
+.body-play{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+    margin: 80px auto;
+}
+
+.body-model{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+    margin: 0 auto;
+    margin-top: -35px;
 }

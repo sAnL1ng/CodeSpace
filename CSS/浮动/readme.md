@@ -28,9 +28,10 @@
 
 
 # BFC 容器 Block Formatting Content  块级格式化上下文
-- 哪些属性可以创建BFC：
+- 哪些属性可以触发BFC：
 1. float: left || right
 2. position: absolute || fixed
+- 哪些属性可以创建BFC：
 3. display: inline-block
 4. display: table-cell ....
 5. overflow: hidden || auto || overly || scroll

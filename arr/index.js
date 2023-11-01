@@ -1,4 +1,3 @@
-
 var arr=["a","b","c","d"]
 var arr2=["a"]
 
