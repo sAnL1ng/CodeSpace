@@ -1,8 +1,8 @@
 var arr=["a","b","c","d"]
-var arr2=["a"]
+// var arr2=["a"]
 
-var a = arr.includes(arr2[0]);
-console.log(a);
+// var a = arr.includes(arr2[0]);
+// console.log(a);
 
 // arr[0]='aa'
 // console.log(2 in arr)
@@ -24,6 +24,7 @@ console.log(a);
 // arr.push(1)
 // arr.pop()
 // arr.unshift('hello')
+// console.log(arr);
 // arr.shift()
 
 

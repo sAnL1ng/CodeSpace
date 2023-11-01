@@ -1,5 +1,5 @@
-let str = 'abacdeacd'
-
+let str = 'ab acd eacd'
+let arr = str.split('') //字符串转为数组
 
 // 读取字符串身上的值
 // str[2] = 'C' 
@@ -9,7 +9,7 @@ let str = 'abacdeacd'
 
 console.log(str.slice(2,5)); //截取字符串左闭右开
 // arr.splice(4,3)
-// console.log(arr);
+console.log(arr);
 // let str2 = arr.join('=>')
 // console.log(str2);
 
