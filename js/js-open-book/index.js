@@ -34,5 +34,3 @@ window.onmousemove = function(e){
 }
 
 console.log(front);
-
-
