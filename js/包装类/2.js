@@ -5,8 +5,8 @@ let obj = {
 // console.log(obj['name']);
 // obj.girlFriend = '翠花'
 let girl = 'girlFriend'
-obj[girl] = '小红' /*增*/ 
+obj[girl] = '小红' 
 
-delete obj.girlFriend //移除对象中的girlFriend属性
+// delete obj.girlFriend //移除对象中的girlFriend属性
 
 console.log(obj);

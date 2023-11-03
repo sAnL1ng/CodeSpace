@@ -11,20 +11,19 @@
 //     //     age:age,
 //     //     sex:sex
 //     // }
-//     // return this
-
+//     return this
 // }
 
 
-// function Person(name, age){
-//     var that = {}
-//     that.name = name;
-//     that.age = age;
-//     return that
-// }
+function Person(name, age){
+    var that = {}
+    that.name = name;
+    that.age = age;
+    return that
+}
 
-// let p1 = Person('程总',18)
-// let p2 = Person('梓帆',19)
+let p1 = Person('程总',18)
+let p2 = Person('梓帆',19)
 
-// console.log(p1);
-// console.log(p2);
+console.log(p1);
+console.log(p2);

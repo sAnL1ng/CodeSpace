@@ -16,6 +16,7 @@
 // var str = 'abcd'
 // console.log(str.length);
 
+
 // var num = 4
 // num.len = 3
 
@@ -23,7 +24,7 @@
 // num.len = 3
 // delete num.len
 
-// new Number.len  //隐式包装类
+// var num = new Number(4).len  //隐式包装类
 // console.log(num.len);
 
 // 考点
@@ -32,15 +33,15 @@
 // console.log(arr);
 
 // var str = 'abcd'
-//str.length = 2
+// str.length = 2
 // new String(str).length = 2 //delete
 // console.log(str.length); 
 
 //面试题
-var str = 'abc'
-str += 1
-var test = typeof(str)
-if(test.length == 6){
-    test.sign = 'typeOf的返回结果可能为String'
-}
-console.log(test.sign);
+// var str = 'abc'
+// str += 1
+// var test = typeof(str)
+// if(test.length == 6){
+//     test.sign = 'typeOf的返回结果可能为String'
+// }
+// console.log(test.sign);
