@@ -1,16 +1,14 @@
-function Bus(){
+// function Bus(){
 
-}
+// }
 
-Car.prototype = {
-    constructor: Bus
-}
+// Car.prototype = {
+//     constructor: Bus
+// }
 
 function Car(){
 
 }
-
-
 
 var car = new Car();
 console.log(car.constructor);
