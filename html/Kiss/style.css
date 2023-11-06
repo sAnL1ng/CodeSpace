@@ -74,6 +74,7 @@ body{
     left: -80px;
     right: 0px;
     bottom: -5px;
+    
 }
 /*伪元素*/
 .face-l::before{
