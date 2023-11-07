@@ -221,7 +221,7 @@ body {
 }
 @keyframes mouth-lower {
 	from {
-		border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+		border-radius: 50% 50% 0 0 ;/*/ 100% 100% 0 0;*/
 		top: 1.75em;
 		height: 0.75em;
 		visibility: visible;
