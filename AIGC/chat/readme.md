@@ -27,4 +27,4 @@
     - 调用openai.Completion,create(
         参数字典
     )   https的调用davinci 模块
-    - 前后端数据交流的格式时JSON
+    - 前后端数据交流的格式是JSON
