@@ -19,21 +19,21 @@
     <button id="btn">提交</button>
     <script>
         let btn = document.getElementById('btn')
-        function send(){
-            console.log("提交完成");
+        function send(e){
+            console.log(this,"提交完成",e);
         }
 
         btn.addEventListener('click',debounce(send,1000))
-
         
-        function debounce(fn,dalay){
+        function debounce(fn,delay){
             let timer;
 
             return function(){
-                if(timer) clearTimeout(timer)
+                let args = arguments
 
-                timer = setTimeout(function(){
-                    fn()
+                if(timer) clearTimeout(timer)
+                timer = setTimeout(() => {
+                    fn.call(this, ...args)
                 },delay)
             }
 

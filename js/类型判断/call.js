@@ -7,7 +7,7 @@ function foo(){
 
 // foo.call(obj)
 // 
-// {
+// obj{
 //     fn:foo
 // }
 // obj.fn()
@@ -26,6 +26,6 @@ Function.prototype.myCall = function(context){
     return res
 }
 
-foo.myCall(obj)
+foo.myCall(obj,1,3)
 
 console.log(obj,1,3);
