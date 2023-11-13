@@ -1,12 +1,14 @@
 // console.log(
-//     Object.prototype.toString.call('Hello')
+//     Object.prototype.toString('Hello')
 // )
 let s = 'Hello'
 
 function isType(s){
-    return Object.prototype.toString.call(s).slice(8,-1)
+    console.log(Object.prototype.toString.call(s).slice(8,-1)); 
 }
-
-if(isType(s) === 'string'){
+isType(s)
+// if(isType(s) === 'string'){
     
-}
+// }
+let nu = null
+console.log(typeof(nu));

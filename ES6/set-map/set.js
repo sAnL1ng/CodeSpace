@@ -16,9 +16,9 @@
 // var unique = (arr) => [...new Set(arr)]
 // console.log(unique(arr));
 
-// let set = new Set([1,1,2,2,3,4])
-// set.clear()
-// console.log(set);
+let set = new Set([1,1,2,2,3,4])
+set.clear()
+console.log(set);
 
 // let set = new Set([1,1,2,2,3,4])
 // set.delete(1)
@@ -31,7 +31,7 @@
 // console.log(set.has(6));
 
 
-let set = new Set([1,1,2,2,3,4])
-for(let item of set.values()) {
-    console.log(item);
-}
+// let set = new Set([1,1,2,2,3,4])
+// for(let item of set.values()) {
+//     console.log(item);
+// }

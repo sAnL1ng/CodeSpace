@@ -1,13 +1,12 @@
 var obj ={
     a:1
 }
-function foo(){
-    console.log(this.a);
+function foo(a,b){
+    console.log(this.a,a+b);
 }
 
 // foo.call(obj)
-// 
-// obj{
+// let obj = {
 //     fn:foo
 // }
 // obj.fn()
@@ -26,6 +25,4 @@ Function.prototype.myCall = function(context){
     return res
 }
 
-foo.myCall(obj,1,3)
-
-console.log(obj,1,3);
+foo.myCall(obj,2,3)
