@@ -1,0 +1,16 @@
+<view class="hero">
+YYY
+<button bindtap="dologin">
+提交
+</button>
+<view class="car">
+<view class ="hd">
+  <text>{{info.name}}</text>
+</view>
+</view>
+<view class="bd">
+<text>{{info.model}}</text>
+<text>{{info.price}}</text>
+<image src="{{info.pic}}" mode=""/>
+</view>
+</view>
