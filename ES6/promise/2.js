@@ -1,41 +1,54 @@
 // new Promise
 
-function xq(){
+function bo1(){
     return new Promise((resolve,reject) => {// promiese----ES6新增构造函数
         setTimeout(() => {
-            console.log('龙哥相亲了！');
-            resolve('相亲成功')
+            console.log('JDG比赛第一把输了!');
+            resolve('比分0:1')
         }, 2000);
     }) 
 }
 
-function marry(){
+function bo2(){
     return new Promise((resolve,reject) => {
         setTimeout(() => {
-            console.log('龙哥结婚了！');
-            resolve('结婚完成')
+            console.log('JDG比赛第二把赢了!');
+            resolve('比分1:1')
         }, 1000)
     })
 }
 
-function baby(){
-    setTimeout(() => {
-        console.log('小龙女出生');
-    }, 500);
+function bo3(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            console.log('JDG比赛第三把输了!');
+            resolve('比分1:2')
+        }, 500)
+    })
 }
 
-function baby2(){
-    setTimeout(() => {
-        console.log('小龙2出生');
-    }, 300);
+function bo4(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            console.log('JDG比赛第四把输了!');
+            resolve('比分:1:3,坐飞机回家了!')
+        }, 300)
+    })
 }
 
-xq()
+bo1()
 .then((res) => {
     console.log(res);
-   return marry()
+    return bo2()
 })
 .then(res2 => {
     console.log(res2);
-    baby()
+    return bo3()
+})
+.then(res3 => {
+    console.log(res3);
+    return bo4()
+})
+.then(res4 => {
+    console.log(res4);
 })

@@ -36,8 +36,8 @@ function c(){
 //     console.log(err);
 // })
 
-Promise.race([a(),b()]) //优化代码
-.then(c)
-.catch((err) => {
-    console.log(err);
-})
+// Promise.race([a(),b()]) //优化代码
+// .then(c)
+// .catch((err) => {
+//     console.log(err);
+// })
