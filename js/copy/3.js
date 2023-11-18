@@ -40,5 +40,5 @@ function shalldowCpoy(obj){
 
 let newObj = shalldowCpoy(arr)
 
-console.log(newObj);
+console.log(newObj);    
 
