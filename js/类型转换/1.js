@@ -35,9 +35,12 @@ let falg = Boolean
 // console.log(String(true));// true
 
 // Object的转换
-// console.log(Object('123'));// = new String('123')
-// console.log(Object(123));// = new Number(123)
-// console.log(Object(undefined));// Object{}
-// console.log(Object(null));// Object{}
+console.log(Object('123'));// = new String('123')
+console.log(Object(123));// = new Number(123)
+console.log(Object(true));// = new Boolean(true)
+console.log(Object(undefined));// Object{}
+console.log(Object(null));// Object{}
+console.log(Object(Symbol(123)));// Symbol (Symbol(123))
+console.log(Object(BigInt(123n)));// BigInt (123n)
 
 
