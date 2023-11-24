@@ -1,11 +1,13 @@
 console.log(1 == '1');
 
-NaN == NaN //false 官方文档
+console.log(NaN == NaN); //false 官方文档
 
-// true == 1
+console.log(true == 1);
 
-// 1 == {}  1 == '[object Object]'
+console.log(1 == {} ); //1 == '[object Object]'
 
-// {} == {} false
+console.log({} == {}); //false
+let s = {}
+console.log(s.ToNumber());
 
 

@@ -15,7 +15,7 @@
 - valueOf
 用于转换包装类 只对包装类中的三种原始数据类型对象转换成原始数据类型有效
 
-# ToPrimitive(Object数据类新转原始数据类型)
+# ToPrimitive(Object数据类型转原始数据类型)
 
 - ToPrimitive(obj,Number)  ==> Number()
 1. 如果参数obj是数据基本类型，直接返回

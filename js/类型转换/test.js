@@ -7,6 +7,6 @@ console.log([] == ![]);
 // 3. 也就可以最终写成 '' ==  0
 // 4. 0 == 0
 
-let date = new Date()
-console.log(date.valueOf());
-console.log(date.toString());
+// let date = new Date()
+// console.log(date.valueOf());
+// console.log(date.toString());

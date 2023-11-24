@@ -1,7 +1,7 @@
 console.log('start');
 
 setTimeout(() => {
-    console.log('setTimeout');
+    console.log('setTimeout')
     setTimeout(() => {
         console.log('inner');
     });
