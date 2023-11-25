@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none!important;
+        }
+        .award_users{
+            z-index: 999;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center{
+            width: 100px;
+            margin: 20px auto;
+            background-color: red;
+        }
+        .pic{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+        }
+        .close{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="loading" class = 'hidden'><img class="pic" src="https://ts1.cn.mm.bing.net/th/id/R-C.b3221b81661167bc429aea99e2586aee?rik=ZCqpg1hJpgD3sw&riu=http%3a%2f%2fwww.yilewan.com%2fresource%2fetpResource%2fimages%2floading.gif&ehk=8SSR9kfkOSDuMCmwSXdkARULQTCCBAfqtvnDIdciFyU%3d&risl=&pid=ImgRaw&r=0" autoplay></div>
+        <button id="btn">抽奖</button>
+    </div>
+    <div class="award_users hidden">
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>手机号</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="center close">关闭，再抽</div>
+    </div>
+    <script>
+    let isPicking = false;
+    const btn = document.querySelector("#btn");
+    const loading = document.querySelector('#loading');
+    const awardUsers = document.querySelector('.award_users')
+    const close = document.querySelector('.close');
+
+    function doAward(){
+        if(isPicking) return
+        isPicking = true
+        // this.setAttribute('disabled', 'disabled')
+        this.classList.add('hidden')
+        loading.classList.remove('hidden')
+
+        setTimeout(() => {
+            isPicking = false
+            this.classList.remove('hidden')
+            loading.classList.add('hidden')
+            awardUsers.classList.remove('hidden')
+        },1000)
+    }
+    btn.addEventListener('click', doAward)
+    close.addEventListener('click',function(){
+        awardUsers.classList.add('hidden')
+    })
+    </script>
+</body>
+</html>
