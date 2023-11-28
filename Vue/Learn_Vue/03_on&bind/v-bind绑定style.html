@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div :style="{color:fontColor,fontSize:fontLang}">Oi!</div>
+        <div :style="styleObj">芙蓉源</div>
+        <div :style="[styleObj,styleObj2]">丁真</div>
+    </template>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const App = {
+            template: '#my-app',
+            data() {
+                return {
+                    fontColor:'blue',
+                    fontLang:'50px',
+                    styleObj:{
+                        color:'green',
+                        fontWeight:'bold'
+                    },
+                    styleObj2:{
+                        fontSize:'40px',
+                        backgroundColor:'black'
+                    }
+                }
+            },
+            methods:{
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
