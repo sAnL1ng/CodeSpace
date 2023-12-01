@@ -13,7 +13,7 @@ App({
       success:(response) =>{
         // console.log(response);
         Object.assign(this.globalData,
-          response.data)
+          response.data) 
           // console.log(this,'----');
       }
     })
