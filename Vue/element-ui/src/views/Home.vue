@@ -5,6 +5,9 @@
                 <a href="#">选课系统</a>
                 <el-dropdown>
                     <span class="el-dropdown-link">
+                        <!-- 欢迎 {{ $route.params.user }} -->
+                        <!-- 欢迎 {{ $route.query.user }} -->
+                        <!-- 欢迎 {{ $route.params.user }} -->
                         欢迎 {{ $route.hash.slice(1) }}
                         <el-icon class="el-icon--right">
                             <arrow-down />

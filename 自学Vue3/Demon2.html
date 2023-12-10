@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon2计数器</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    counter:1
+                }
+            },
+            mounted(){
+                setInterval(()=>{
+                    this.counter++;
+                },1000)
+            },
+            template:'<div id = "num">{{ counter }}</div>',
+        }).mount("#app")
+        
+    </script>
+</body>
+</html>

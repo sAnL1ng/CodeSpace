@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加选手</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    list: [],
+                    inputValue:"",
+                }
+            },
+            methods:{
+                handleAddItem(){
+                    this.list.push(this.inputValue)
+                    this.inputValue = ""
+                }
+            },
+            template: `
+            <div>
+                <input v-model="inputValue" />
+                <button @click=handleAddItem>添加选手</button>
+                <ul>
+                    <li v-for="(item,index) of list">[{{ index }}]{{ item }}</li>
+                </ul>
+            </div>
+            `
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

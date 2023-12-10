@@ -39,6 +39,7 @@
                 // console.log(this.$router);
                 // 用JS控制路由的跳转
                 // this.$router.push(`/home/${this.account}`)
+                // this.$router.push({name:'home',query: {user: this.account}})
                 // this.$router.push({name:'home',params: {user: this.account}})
                 this.$router.push({name:'home',hash: `#${this.account}`})
             }
