@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax业务流程封装</title>
+</head>
+<body>
+    <script>
+        // 返回promise对象的函数
+        function getDataByAjax(url){
+            // Promise 是 ES6 提供的一个类
+            return new Pormise((resolve,reject)=>{
+                console.log('Hello world');
+            })
+        }
+        (async function(){
+            const p = await getDataByAjax('https://api.github.com/users/sAnL1ng/repos')
+            console.log(p);
+            // await 后面是一个promise对象
+            const data = await p
+            console.log('world hello');
+        })()
+    </script>
+</body>
+</html>
