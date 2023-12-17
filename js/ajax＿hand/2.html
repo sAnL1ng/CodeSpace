@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+        let template = '我是{{ name }}, 年龄{{ age }},性别{{ sex }}'
+        let person = {
+            name: 'pluto',
+            age: 18
+        }
+        console.log(render(template, person));
+
+        function render(template,person){
+            // {} 在reg 中是特定字符 ,在这里我们是想匹配{}本身 所以我们需要进行转义
+            // \d 代表数字 \w 代表单词 \w+ 代表一个或多个 
+            // (\w+) 表示分组 ()括号里的东西拿出来
+            const reg = /\{\{(\w+)\}\}/;
+            // true or false
+            if(reg.test(template)){
+                console.log('有的',reg.exec(template));
+                const name = reg.exec(template)[1]
+                console.log(name);
+                template = template.replace(reg,data[name])
+                // console.log(template);
+                return render(template,data)
+            }
+            return template
+            // console.log(Object.prototype.toString.call(reg)); //[object RegExp]
+
+        }
+</script>
+</body>
+
+</html>

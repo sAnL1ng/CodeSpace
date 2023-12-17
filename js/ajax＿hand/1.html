@@ -1,26 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax业务流程封装</title>
 </head>
+
 <body>
     <script>
         // 返回promise对象的函数
-        function getDataByAjax(url){
-            // Promise 是 ES6 提供的一个类
-            return new Pormise((resolve,reject)=>{
-                console.log('Hello world');
+        // promise then 是微任务 promise本身是一个同步任务
+        function getDataByAjax(url) {
+            // Promise 是 ES6 提供的一个类 实例化的时候，立即执行传给它的执行器
+            // executor 同步执行
+            return new Promise((resolve, reject) => {
+                console.log('1111');
+                // 异步任务的容器
+                // setTimeout(()=>{
+                //     resolve("5555");
+                // },2000)
+                // 浏览器的兼容性 ie 低版本不支持XMLHttpRequest
+                const xhr = XMLHttpRequest
+                    ? new XMLHttpRequest()
+                    : new ActiveXObject('Microsoft.XMLHTTP')
+                // 打开主动请求数据
+                console.log(xhr.readyState); // 0
+                xhr.open('GET', url, false)
+                console.log(xhr.readyState); // 1 HTTP 请求通道打开
+                xhr.onreadystatechange = function () {
+                    console.log(xhr.readyState); // 4 表示完成所有数据的传输
+                    if (xhr.readyState !== 4) reuturn
+                    // 304 Not Modified  性能优化 服务器端资源 在多次请求中并没有改变
+                    // 资源改变后(update_time时间戳改变 以及文件) 304--响应头 不传输响应体
+                    // 前端拿到304响应头  怎么办?  前端会去浏览器缓存里面拿之前的结果
+                    // 这个过程称为协商缓存
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        resolve(xhr.responseText) // 4
+                    } else {
+                        reject(xhr.responseText)
+                    }
+                }
+                xhr.send()
+                console.log(xhr.readyState);
             })
         }
-        (async function(){
-            const p = await getDataByAjax('https://api.github.com/users/sAnL1ng/repos')
-            console.log(p);
+        (async function () {
+            const p = getDataByAjax('https://api.github.com/users/sAnL1ng/repos')
+            console.log("2222");
+            console.log(p); //pending 状态 Promise
             // await 后面是一个promise对象
-            const data = await p
-            console.log('world hello');
+            try {
+                const data = await p //等待p执行完毕 卡在这里2s 
+                console.log('3333');
+                console.log(p); //从pedding -> fullfiled状态
+                console.log(JSON.parse(data));
+            } catch {
+                console.log(err);
+            }
+
         })()
+        // 1111 2222 pedding 等2s 3333 fullfiled  5555 
     </script>
 </body>
+
 </html>
