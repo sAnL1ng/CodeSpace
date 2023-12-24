@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单项数据绑定</title> 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 主要目的是的保证了组件的独立性，避免了子组件污染了父组件中的值 -->
+    <div id="app"></div>
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return {
+                   counter:0
+                }
+            },
+            template: `
+            <h2>JSPang.com</h2>
+            <Counter :counter = "counter" />
+            <Counter :counter = "counter" />
+            <Counter :counter = "counter" />
+            `
+        })
+        app.component('Counter',{
+            props:['counter'],
+            data(){
+                return {
+                    newCounter: this.counter
+                }
+            },
+            template:`
+                {{ newCounter }} <button @click = add >增加数量</button>
+            `,
+            methods:{
+                add(){
+                    this.newCounter++
+                }
+            }
+        })
+
+        const vm = app.mount('#app')
+    </script>
+</body>
+</html>

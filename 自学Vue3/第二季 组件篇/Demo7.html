@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子组件调用父组件方法修改父组件属性</title> 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 主要目的是的保证了组件的独立性，避免了子组件污染了父组件中的值 -->
+    <div id="app"></div>
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return {
+                   counter:0
+                }
+            },
+            methods:{
+                handleAddCounter(param){
+                    console.log(param);
+                    this.counter = param //降低耦合性
+                }
+            },
+            template: `
+                <h2>JSPang.com</h2>
+                <Counter :counter = "counter" @add="handleAddCounter "/>
+            `
+        })
+        app.component('Counter',{
+            props:['counter'],
+            emits:{
+                add:(value) => {
+                    return value < 20 ? true : false;
+                }
+            },
+            methods:{
+                handleClick(){
+                    this.$emit('add',this.counter + 3)
+                }
+            },
+            template:`
+                {{ counter }} <button @click = "handleClick" >增加数量</button>
+            `,
+        })
+
+        // 1. 子组件调用父组件事件/方法的编写 $emit()
+        // 2. 子组件向父组件传递参数
+        // 3. 传递参数时，如何进行校验
+
+        const vm = app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件传值校验</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+
+        // String Boolean Array Object Function Symbol
+        const app = Vue.createApp({
+            data(){
+                return {
+                    name:"JSPang 技术胖",
+                    pay:()=>{
+                        alert('给你500元')
+                    }
+                }
+            },
+            template: `
+            <h2>JSPang.com</h2>
+            <son :name = "name"/>
+            `
+        })
+
+        app.component('Son',{
+            props:{
+                name:{
+                    type: String,
+                    validator:function(value){
+                        // 各种业务逻辑 注意要有一个return
+                        return value.search('JSPang') != -1
+                    },
+                    default:"JSPang.com",
+                }
+            },
+            template: `
+            <div>{{ name }} div</div>
+            `
+        })
+
+        const vm = app.mount('#app')
+    </script>
+</body>
+</html>

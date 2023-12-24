@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo01</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            template: `
+            <website />
+            <describe />
+            <count />
+            <count />
+            <count />
+            `
+        })
+        app.component('website', {
+            template: `<h2>JSPang.com</h2>`
+        })
+        app.component('describe', {
+            template: `<div>技术胖的博客</div>`
+        })
+        app.component(`count`, {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                add() {
+                    this.count++
+                }
+            },
+            template: `
+            <div>
+                {{ count }}    
+                <button @click="add">加一</button> 
+            </div>
+                `
+        })
+        
+        const vm = app.mount("#app")
+    </script>
+</body>
+
+</html>

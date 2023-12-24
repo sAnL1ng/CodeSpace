@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件中插槽的使用</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    Hero:'捷风',
+                }
+            },
+            template: `
+            <h2>欢迎来到无畏契约-请选择您的角色</h2>
+            <hero>
+                <div style="color:red;fontSize:50px">{{ Hero }}</div>
+                <div><weapon /></div>
+            </hero>
+            `
+        })
+
+        app.component('hero', {
+            data(){
+                return {
+                    Hero:'芮娜',
+                }
+            },
+            template: `
+                <div>
+                    <span>经过您的慎重考虑，最终选择了：</span>
+                    <span>
+                        <slot />    
+                    </span>    
+                </div>
+            `
+        })
+
+        app.component('weapon', {
+            template: `<span style="color:green">您选择的武器是冥狙</span>`
+        })
+
+        // 父模板里面调用的数据属性，使用的都是夫模板里的数据
+        // 子模板里面调用的数据属性，使用的都是子模板里的数据
+
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>
