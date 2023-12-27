@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">Hello</div>
+
+    <script>
+        let app = document.getElementById('app')
+
+        app.style.position = 'relative';
+
+        // 老版本回流4次 新版本回流1次
+        app.style.width = '100px';
+        console.log(app.offsetWidth);// clientWidth && Window独有的 innerWidth
+        app.style.height = '200px';
+        console.log(app.offsetHeight);
+        app.style.left = '10px';
+        console.log(app.offsetLeft);
+        app.style.top = '10px';
+        console.log(app.offsetTop);
+
+
+
+        // 回流一次
+        // app.style.cssText = 'width:100px;height:200px;left:10px;top:10px';
+
+
+    </script>
+</body>
+</html>

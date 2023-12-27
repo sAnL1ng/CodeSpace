@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <div class="name">Tom</div>
+        <div class="age">18</div>
+    </div>
+
+    <!-- DOM树 -->
+    <script>
+        let node = {
+            tag:'div',
+            id: 'app',
+            class: '',
+            x:0,
+            y:0,
+            children: [{
+                tag: 'div',
+                id: '',
+                class: 'app',
+                text:''
+            },
+            {
+                tag: 'div',
+                id: '',
+                class: 'name',
+                text:'Tom'
+            },{
+                tag: 'div',
+                id: '',
+                class: 'age',
+                text:'18'
+            }
+        ]
+        }
+    </script>
+</body>
+</html>
