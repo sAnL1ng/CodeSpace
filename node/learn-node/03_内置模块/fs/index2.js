@@ -1,11 +1,9 @@
-const fs = require('fs')
+const fs = require('fs');
 
-// fs.writeFileSync('./target.md','落霞与孤鹜齐飞')
+fs.writeFileSync('./target.md', '举头望明月')
 
-const img = fs.readFileSync('./avatar.jpg')  // 默认编码格式为buffer
-fs.writeFileSync('./pic/avatar.jpg',img)
-
-// console.log(Buffer.isBuffer(img)); // true
-// console.log(img.length); //76788
+// const img = fs.readFileSync('./avatar.png');
+// fs.writeFileSync('./pic/avatar2.png', img)
 
 // console.log(img);
+
