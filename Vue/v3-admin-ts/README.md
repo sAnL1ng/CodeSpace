@@ -20,3 +20,19 @@
             - mouted <form ref="login">
         - 表单提交
             - validate  
+
+- 为什么element-plus 要搞得这么复杂？
+    - 按需加载
+        图标库有点大，如果用户使用了别的图标，可以省空间
+    -  其他的选择
+    -  单独安装图标库
+       app.component()  全局挂载一下 用到哪几个就挂载哪几个
+
+## ts 
+- 写JS就好， 再做点加法
+- 最关心的数据
+    - ref
+    - reactive
+    - props
+    - store
+- 函数的参数
