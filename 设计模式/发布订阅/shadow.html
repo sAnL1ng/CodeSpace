@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影子DOM</title>
+    <style>
+        .title{
+            color: red;
+            font-size: 20px;
+        }
+        body{
+            --color: green
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="title">我是真实的标题</div>
+    </div>
+    <div id="root"></div>
+
+    <script>
+        let root = document.getElementById("root");
+        let rootShadow = root.attachShadow({ mode:"open", delegatesFocus: false }); // 创建一个根 shadow DOM 
+        
+        rootShadow.innerHTML = `
+        <input />
+        <div class="title shadow">我是影子DOM提供的标题</div>
+        <style>
+            :host{ 
+                color: var(--color);
+            }
+        </style>
+        `
+
+        console.log(root.shadowRoot);
+    </script>
+</body>
+</html>

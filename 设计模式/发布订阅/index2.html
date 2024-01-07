@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布订阅2</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        let ev = new Event('look', { bubbles: true, cancelable: false,composed: true }); // 创建一个支持冒泡且不能取消的且会在文档的所有节点间传播的look事件
+
+
+        let box = document.getElementById('box')
+        let boxShadow = box.attachShadow( {mode:'open', delegatesFocus:'false'} ) 
+        boxShadow.innerHTML = `
+            <div class="title">我是影子DOM</div>
+        `
+
+        box.addEventListener('look', () => {
+            // console.log(event);
+            if (event.cancelable) {
+                event.preventDefault() // 阻止默认事件发生
+            } else {
+                console.log('在box触发了look事件');
+            }
+        })
+
+        let  boxChild = box.shadowRoot.querySelector('.title')
+
+        box.dispatchEvent(ev); // 在box上发布look事件 dispatchEvent是JS自带的构造方法——发布事件
+    </script>
+</body>
+
+</html>

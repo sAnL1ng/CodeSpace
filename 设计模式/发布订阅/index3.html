@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CustomEvent</title>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        let myEvent = new CustomEvent('run',{ detail: {name:'running'}, 'bubbles':true, 'cancelable': false});
+        window.addEventListener('run', e => { // 订阅 run 事件
+            console.log(`事件被${e.detail.name}触发`);
+        })
+
+        window.dispatchEvent(myEvent); // 派发 run 事件
+    </script>
+</body>
+</html>
