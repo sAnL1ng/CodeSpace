@@ -11,10 +11,9 @@ axios.interceptors.response.use(res => {
     if (res.status !== 200){ //程序错误
         showFailToast('服务器端异常');
     }else{
-        if (res.data.code !== 8000){
+        if (res.data.code !== '8000'){
             showFailToast(res.data.msg);
-            // Promise.reject(res)
-            return res.data
+            return Promise.reject(res)
         }
         return res.data
     }
