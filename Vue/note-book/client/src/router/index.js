@@ -35,6 +35,22 @@ const routes = [
         meta: {
             title:'笔记列表'
         }
+    },
+    {
+        path:'/NoteDetail',
+        name:'noteDetail',
+        component:() => import('../views/NoteDetail.vue'),
+        meta: {
+            title:'笔记详情'
+        }
+    },
+    {
+        path:'/notePublish',
+        name:'notePublish',
+        component:() => import('../views/NotePublish.vue'),
+        meta: {
+            title:'笔记发布'
+        }
     }
 ]
 

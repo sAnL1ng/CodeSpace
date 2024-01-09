@@ -1,40 +1,51 @@
 <template>
     <div class="note-list">
-        <ul>
-            <li>
+        <ul v-if="state.noteList.length">
+            <li v-for="(item,index) in state.noteList" :key="item.id" @click="goNoteDetail(item.id)">
                 <div class="img">
-                    <img src="https://pix.veryjack.com/i/2023/04/04/fsxnkv.webp" alt="">
+                    <img :src="item.head_img" alt="">
                 </div>
-                <p class="time">2023/05/20</p>
-                <p class="title">今天去吃了猪脚饭和铁锅炖大鹅</p>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="https://a.520gexing.com/uploads/allimg/2023082315/lg1o542qkfm1.jpg" alt="">
-                </div>
-                <p class="time">2024/05/20</p>
-                <p class="title">今天又去吃了猪脚饭</p>
-            </li>
-            <li>
-                <div class="img">
-                    <img src="https://a.520gexing.com/uploads/allimg/2023082315/rs4jtexta1j2.jpg" alt="">
-                </div>
-                <p class="time">2025/05/20</p>
-                <p class="title">今天还去吃了猪脚饭</p>
+                <p class="time">{{ item.c_time }}</p>
+                <p class="title">{{ item.title }}</p>
             </li>
         </ul>
+        <p class="empty" v-else @click="back">当前分类下还没有文章噢！</p>
     </div>
 </template>
 
 <script setup>
 // 页面加载中发请求，拿到当前分类的数据
 import { onBeforeMount,onMounted,onUnmounted } from 'vue';
+import { useRouter,useRoute } from 'vue-router';
+import { reactive } from 'vue';
+import  axios  from '../api'
 
-onMounted(() => {
+const router = useRouter(); // 路由实例
+const route = useRoute(); // 当前路由详情
+
+
+// console.log(route.query.title); // 当前路由详情
+
+onMounted(async() => {
     // 页面加载中发请求，拿到当前分类的数据
-    console.log('页面加载中发请求，拿到当前分类的数据')
+    const { data } = await axios.post('/findNoteListByType',{
+        note_type: route.query.title
+    })
+    state.noteList = data
+    // console.log(data);
 })
 
+const goNoteDetail = (id) => {
+    router.push({ path:'/NoteDetail',query:{id}})
+}
+
+const state  = reactive({
+    noteList: []
+})
+
+const back = () => {
+    router.push({ path:'/noteClass'})
+}
 </script>
 
 <style lang="less" scoped>
@@ -50,6 +61,7 @@ onMounted(() => {
         li{
             img{
                 width: 100%;
+                height: 4rem;
                 border-radius: 0.27rem;
             }
         }
