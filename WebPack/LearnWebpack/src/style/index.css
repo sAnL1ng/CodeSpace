@@ -1,0 +1,7 @@
+body{
+    /* background-color: #309ce4; */
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/image/2.jpg');
+    background-size: cover;
+}
