@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-const router = new Router()
+const router = new Router();
 const { userLogin, userFind,userRegister } = require('../controllers/mysqlControl.js')
 
 

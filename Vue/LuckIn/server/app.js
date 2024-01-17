@@ -7,7 +7,7 @@ const user = require('./routes/user.js');
 
 
 app.use(cors()) // 告诉浏览器允许跨域
-app.use(bodyParser())
+app.use(bodyParser()) // 让koa能解析post参数
 
 app.use(user.routes(),user.allowedMethods()) //koa的基本语法，让路由以及请求方法生效
 
