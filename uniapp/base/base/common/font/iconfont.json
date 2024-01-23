@@ -1,0 +1,16 @@
+{
+  "id": "4417013",
+  "name": "音乐",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "35606443",
+      "name": "音乐蓝色",
+      "font_class": "yinleALLIN",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}
