@@ -28,7 +28,7 @@ import { computed, ref } from 'vue';
 import { useStore } from 'vuex'
 
 const store = useStore()
-console.log(store);
+// console.log(store);
 
 const isShow = computed(() => {
 	return store.state.isShowMenu

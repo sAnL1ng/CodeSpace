@@ -6,7 +6,7 @@ export default createStore({
 	state: {
 		isShowMenu: false, // 控制菜单显示隐藏
 		loginState: false, //是否登录
-		UserInfo: { // 用户信息
+		userInfo: { // 用户信息
 			nickname: '',
 			userId: null,
 			avatar: ''
@@ -20,7 +20,7 @@ export default createStore({
 			state.loginState = val
 		},
 		getUserInfo(state,opt) {
-			state.UserInfo = opt 
+			state.userInfo = opt 
 		}
 	}
 })
