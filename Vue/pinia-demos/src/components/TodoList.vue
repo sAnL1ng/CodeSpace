@@ -8,10 +8,9 @@
 </template>
 
 <script setup>
+
 const props=defineProps(['todos','addTodo'])
-console.log(props.todos);
+
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

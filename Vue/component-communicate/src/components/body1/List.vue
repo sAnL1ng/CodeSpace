@@ -13,6 +13,7 @@
         methods:{
             changeProps(){
                 this.lists[0] = 'HTML'
+                this.lists[1] = 'CSS'
             }
         },
         data(){

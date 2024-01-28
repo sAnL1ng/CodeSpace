@@ -4,7 +4,7 @@ const config = {
         USERNAME:'root',
         PASSWORD:'yixiafanshang',
         PORT:'3306',
-        POST:'localhost'
+        HOST:'localhost'
     }
 }
 

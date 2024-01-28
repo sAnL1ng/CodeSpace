@@ -19,12 +19,7 @@ export default {
             lists: ['html', 'css'],
             message: ''
         }
-    },
-    watch:{
-        list(newVal){
-            console.log(newVal);
-        }   
-    },  
+    }, 
     methods: {
         submit() {
             if (!this.message) return

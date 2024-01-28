@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>发布订阅</title>
     <style>
-        #box {
+        /* #box {
             width: 100px;
             height: 100px;
             background-color: #000;
-        }
+        } */
     </style>
 </head>
 
@@ -18,22 +18,22 @@
     <div id="box"></div>
 
     <script>
-        let ev = new Event('look', { bubbles: true, cancelable: true }); // 创建一个支持冒泡且不能取消的look事件
+        let ev = new CustomEvent('look', { bubbles: true, cancelable: false }); // 创建一个支持冒泡且不能取消的look事件
 
 
-        let box = document.getElementById('box')
-        box.addEventListener('look', () => {
-            // console.log(event);
-            if (event.cancelable) {
-                event.preventDefault() // 阻止默认事件发生
-            } else {
-                console.log('在box触发了look事件');
-            }
-        })
-
-        // window.addEventListener('look',() => {
-        //     console.log('在window触发了look事件');
+        // let box = document.getElementById('box')
+        // box.addEventListener('look', () => {
+        //     // console.log(event);
+        //     if (event.cancelable) {
+        //         event.preventDefault() // 阻止默认事件发生
+        //     } else {
+        //         console.log('在box触发了look事件');
+        //     }
         // })
+
+        window.addEventListener('look',() => {
+            console.log('在window触发了look事件');
+        })
 
         box.dispatchEvent(ev); // 在box上发布look事件 dispatchEvent是JS自带的构造方法——发布事件
     </script>
