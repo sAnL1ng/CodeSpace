@@ -353,6 +353,9 @@ const goSongsList = (id) => {
 				display: flex;
 				align-items: center;
 				margin-bottom: 20rpx;
+				&:last-child {
+					padding-bottom: 50rpx;
+				}
 				.pic{
 					width: 100rpx;
 					height: 100rpx;

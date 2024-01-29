@@ -7,7 +7,7 @@
 					<image class="pic" src="../../static/logo.png" mode="aspectFill"></image>
 				</view>
 				<view class="username">
-					<text>蜗牛</text>
+					<text>sAnL1ng自制音乐播放器</text>
 					<uni-icons type="right" size="16"></uni-icons>
 				</view>
 			</view>

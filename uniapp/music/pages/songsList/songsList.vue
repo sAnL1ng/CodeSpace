@@ -94,6 +94,7 @@ const getPlayList = async (id) => {
 	console.log(res.data.songs);
 	list.value = res.data.songs;
 };
+
 const getPlayListDetail = async (id) => {
 	const res = await apiGetPlayListDetail(id);
 	// console.log(res.data.playlist, '----');
@@ -223,6 +224,9 @@ const showPlayer = (id) => {
 				display: flex;
 				align-items: center;
 				margin-bottom: 40rpx;
+				&:last-child {
+					padding-bottom: 50rpx;
+				}
 				.num {
 					flex: 0 0 50rpx;
 					color: #8b8f9b;

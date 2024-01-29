@@ -9,7 +9,7 @@
 				<text class="author"> - {{state.author}}</text>
 			</view>
 			<view class="player-control">
-				<view class="iconfont icon-bofanganniu"></view>
+				<view class="iconfont icon-play1"></view> 
 				<view class="iconfont icon-16gl-playlistMusic"></view>
 			</view>
 		</view>
@@ -84,6 +84,7 @@ watch(
 	height: 90rpx;
 	background-color: #fff;
 	box-shadow: 0 -6rpx 10rpx #eee;
+	overflow-y: hidden;
 	.mini-player{
 		display: flex;
 		height: 100%;
@@ -117,11 +118,13 @@ watch(
 			flex: 0 0 100rpx;
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
+			
 			.iconfont{
 				font-weight: bold;
-				font-size: 36rpx;
+				font-size: 30rpx;
 			}
-			.icon-bofanganniu{
+			.icon-play1{
 				width: 40rpx;
 				height: 40rpx;
 				border: 1px solid #aaa;
