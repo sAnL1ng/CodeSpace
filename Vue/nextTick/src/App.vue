@@ -1,13 +1,12 @@
-
 <template>
-  <List />
+  <HelloWorld />
 </template>
 
 
 
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-import List from './components/List.vue'
+import HelloWorld from './components/HelloWorld.vue'
+// import List from './components/List.vue'
 </script>
 
 
