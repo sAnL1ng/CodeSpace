@@ -10,7 +10,6 @@
 import { ref, onBeforeMount, nextTick } from 'vue'
 
 const msg = ref('初始消息')
-
 const refP = ref(null)
 
 // console.log(refP.value); // NULL
