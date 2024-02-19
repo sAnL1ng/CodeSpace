@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module">
+    import { reactive } from './reactive.js';
+
+    const state = reactive({
+      name: 'sAnL1ng',
+      age: 18
+    })
+
+    console.log(state.name); // 'sAnL1ng'
+    console.log(state.age); // 18
+    
+    setInterval(() => {
+      state.age++
+    }, 3000)
+  </script>
+</body>
+</html>
