@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# reacitve
+reactive 只能将应用类型代理成响应式 是因为proxy只接受引用类型
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+被代理对象中的任意属性发生修改都应该将用到了这个属性的各个函数重新执行一遍。那么在此之前，需要知道哪些属性被用到了，也就是依赖收集。
 
-## Recommended IDE Setup
+1. 用proxy代理了对象
+2. 在代理函数 get中 对使用了的属性做 副作用函数收集
+3. 在代理函数 set中 对修改了的属性做 副作用函数的触发
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+# Reflect
+将ES6及之后的所有 隶属于 Object 对象上的方法，挪到的 Reflect 对象上 (Reflect主要解决了一些程序报错问题)
+
+配合 Proxy 使用
+
