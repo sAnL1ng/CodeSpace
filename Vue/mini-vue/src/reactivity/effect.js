@@ -1,7 +1,7 @@
 const targetMap = new WeakMap()
 let activeEffect = null  // 得是一个副作用函数
 
-export function effect(fn, options = {}) { // 也是watch，computed 的核心逻辑
+export function effect(fn, options={}) { // 也是watch，computed 的核心逻辑
   const effectFn = () => {
     try {
       activeEffect = effectFn
@@ -13,7 +13,7 @@ export function effect(fn, options = {}) { // 也是watch，computed 的核心�
   if (!options.lazy) {
     effectFn()
   }
-  effect.scheduler = options.scheduler
+  effectFn.scheduler = options.scheduler
   return effectFn
 }
 
@@ -64,5 +64,6 @@ export function trigger(target, key) {
     } else {
       effectFn() // 将该属性上的所有的副作用函数全部触发
     }
+    
   });
 }

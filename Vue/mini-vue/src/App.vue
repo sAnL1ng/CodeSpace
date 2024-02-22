@@ -1,22 +1,27 @@
 <template>
   <div>
-    <p>{{ state.count }}</p>
+    <p>{{ age }}</p>
     <!-- <p>{{ num }}</p> -->
-    <button @click="() => state.count++">add</button>
+    <button @click="() => age++">add</button>
   </div>
 </template>
 
 <script setup>
 import { computed, reactive, watch, effect, watchEffect, ref } from 'vue';
 
-const state = reactive({
-  count: 1,
-  msg: 2,
-  abc: 123
-})
-
 const age = ref(18)
-console.log(age);
+
+console.log(age.value);
+
+
+
+// const state = reactive({
+//   count: 1,
+//   msg: 2,
+//   abc: 123
+// })
+
+
 // const age = ref(age)
 
 // const num = computed(() => {
