@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul class="list">
+            <li class="item" v-for="(item,index) in list" :key="index">
+                {{item}}
+            </li>
+        </ul>
+
+        <button @click="change">change</button>
+        <button @click="add">add</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+
+                const list = ref(['html', 'css', 'vue'])
+
+                const change = () => {
+                    list.value.reverse()
+                }
+
+                const add = () => {
+                    list.value.unshift('js')
+                }
+                return {
+                    list,
+                    change,
+                    add
+                }
+            }
+        }).mount('#app')
+    </script>
+
+    <script>
+        let oldDom= [
+            {
+                tagName:'li',
+                key: 0,
+                value: 'html'
+            },
+            {
+                tagName:'li',
+                key: 1,
+                value: 'css'
+            },
+            {
+                tagName:'li',
+                key: 2,
+                value: 'vue'
+            },
+        ]
+
+        
+    </script>
+</body>
+
+</html>
