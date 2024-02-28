@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* id选择器 */
+        /* #app {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+        } */
+
+        /* 类选择器 */
+        /* .box1,.box2,.box3 {
+            width: 100%;
+            height: 100px;
+            background-color: burlywood;
+            margin-bottom: 10px;
+        } */
+
+        /* 标签选择器 */
+        /* h2 {
+            color: blueviolet;
+        } */
+
+        /* 后代选择器 */
+        /* #app div { 
+            border: 2px solid #e40b0b;
+        } */
+
+        /* 子选择器 */
+        /* #app > div {
+            border: 2px solid #e40b0b;
+        } */
+
+        /* 相邻兄弟选择器 */
+        /* .box1 + .box2 {
+            border: 2px solid #ff0303;
+        } */
+
+        /* 群组选择器 */
+        /* #app .box2 {
+            border: 2px solid #e40b0b;
+        } */
+
+        /* 属性选择器 */
+        /* input[abc="abc"] {
+            border: 2px solid #e40b0b;
+        } */
+
+        /* 伪元素 */
+        /* #input::before {
+            content: "000";
+            display: block;
+        } */
+        
+        /* 伪类 */
+        /* #input:hover {
+            background-color: #9903b8;
+        } */
+
+    </style>
+    <style>
+        /* 选择器优先级：id > class > 标签 > 属性 > 伪类 > 伪元素 */
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .wrap {
+            background-color: rgb(255, 0, 0);
+        }
+        div {
+            background-color: rgb(20, 103, 203) ;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div id="app">
+        <div class="box1">
+            <div class="title">
+                <h2>这是标题</h2>
+            </div>
+        </div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div> -->
+    <!-- <input type="text" abc="abc">
+    <input type="text" id="input"> -->
+
+    <div class="container">
+        
+    </div>
+    <div id="box" class="wrap" style="background-color: #000000;">
+        hello world
+    </div>
+</body>
+</html>
