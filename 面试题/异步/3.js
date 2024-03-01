@@ -21,11 +21,15 @@ function b() {
 a()
     .then((res) => { // res == ok
         b()
+        console.log(res);
     },
     (err) => {
         console.log(err);
     }
 )
+.then(() => {
+    console.log('then2');
+})
     // .catch(err => {
     //     console.log(err,'err');
     // })
