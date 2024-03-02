@@ -96,21 +96,47 @@ class MyPromise {
         })
     }
 
-    static all(promises) {
-        return new MyPromise((resolve,reject) => {
-            const arr = Array.from(promises)
-            arr.forEach((promise) => {
-                promise.then((value) => {
-                    arr.push(value)
-                    if(arr.length === arr.length) {
-                        resolve(arr)
+    static all(promises){
+        return new MyPromise((resolve,reject)=>{
+            let count = 0;
+            let arr = []
+            for(let i=0 ; i< promises.length ; i++){
+                promises[i].then(
+                    (value)=>{
+                        count++
+                        arr[i]=value
+                        if(count === promises.length){
+                            resolve(arr)
+                        }
+                    },
+                    (reason)=>{
+                        reject(reason)
                     }
-                }, (reason) => {
-                    reject(reason)
-                })
-            })
+                )
+            }
         })
     }
+
+    static any(promises){
+        return new MyPromise((resolve,reject)=>{
+            let count = 0,errors = []
+            for(let i=0 ; i< promises.length ; i++){
+                promises[i].then(
+                    (value)=>{
+                        resolve(value)
+                    },
+                    (reason)=>{
+                        count++
+                        errors[i] = reason
+                        if(count === promises.length){
+                            reject(new AggregateError(errors))
+                        }
+                    }
+                )
+            }
+        })
+    }
+    
 
 }
 
