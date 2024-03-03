@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #8a1717;
+
+            /* display: none; */
+
+            /* visibility: hidden; */
+
+            /* opacity:0 */
+
+            /* animation会触发GPU加速,便不会产生重绘 */
+            /* animation: hide 2s ease; */
+
+            /* position: absolute;
+            left: -9999px; */
+
+            clip-path: polygon(0px 0px, 50px 0px,0px 50px,50px 50px);
+            clip-path: circle(0)
+        }
+
+        @keyframes hide {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <h2>hello</h2>
+
+    <script>
+        let box = document.querySelector('.box')
+
+        box.addEventListener('click',function() {
+            console.log('box');
+        })
+    </script>
+</body>
+</html>
