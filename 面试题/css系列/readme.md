@@ -69,7 +69,7 @@ ppi === 像素的密度
 1. position: absolute + translate  || margin负值(已知宽高)
 2. flex:    justify-content: center +　align-items: center
 3. grid:    justify-content: center +　align-items: center
-4. table:   text-align: center + vertical-align: middle; (子容器不能是块级) 
+4. table-cell:   text-align: center + vertical-align: middle; (子容器不能是块级) 
 5. margin(已知宽高)
 
 # 8. 三栏布局

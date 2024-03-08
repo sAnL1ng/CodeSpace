@@ -9,7 +9,6 @@
 
 <script setup>
 import { ref, nextTick, onMounted } from 'vue'
-
 import { myNextTick } from './next-tick'
 
 const list = ref(new Array(20).fill(0))
