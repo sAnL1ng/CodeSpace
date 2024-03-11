@@ -23,5 +23,5 @@ function formatNumber(number) {
     }
     interger = doSplit(interger);
     decimal = doSplit(decimal,false);
-    return interger + (decimal === '' ? '':'.' + decimal);
+    return interger + (decimal === '' ? '':'.' + decimal); 
 }
