@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@vue/server-renderer": "^3.4.21",
+    "express": "^4.19.1",
+    "vue": "^3.4.21"
+  }
+}
