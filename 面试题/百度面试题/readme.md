@@ -69,7 +69,7 @@ https://192.168.31.45:8080/list
   http://192.168.31.2:8080 (后端go)
 
 
-  1. JSONP  --- 借助script标签上的src属性不受同源策略的影响这一机制，来实现跨域
+1. JSONP  --- 借助script标签上的src属性不受同源策略的影响这一机制，来实现跨域
 
     1). ajax请求收同源策略的影响，但是 <script> 上的src属性不受同源策略的影响，且该属性也会导致浏览器发送一个请求
     // 1. 借助script的src属性给后端发送一个请求，且携带一个参数（'callback'）
@@ -79,8 +79,13 @@ https://192.168.31.45:8080/list
 
     2). 缺点： 1.必须要后端配合    2.只能用于get请求
 
+2. Cors (Cross-Origin Resource Sharing) --- 后端通过设置响应头来告诉浏览器不要拒绝接收后端的响应
+    Access-Control-Allow-Origin: * // 允许所有域名的请求
 
-    
+3. node代理 （vite 开发环境下生效）
 
+4. nginx代理  (类似cors，白名单配置)
 
+5. domain （在iframe中，当父级页面和子级页面的 domain（子域）不同时，通过设置 document.domain='xx' 来将xx定为基础域，从而实现跨域）
 
+6. postMessage (在iframe中)
